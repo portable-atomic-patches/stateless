@@ -7,11 +7,11 @@ use alloc::{
     collections::BTreeMap,
     fmt::Debug,
     string::{String, ToString},
-    sync::Arc,
     vec::Vec,
 };
 use alloy_consensus::{BlockHeader, Header};
 use alloy_eips::eip7928::BlockAccessList;
+use alloy_primitives::sync::Arc;
 use alloy_primitives::{B256, keccak256};
 use reth_chainspec::{EthChainSpec, EthereumHardforks};
 use reth_consensus::ConsensusError;
