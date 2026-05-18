@@ -1,0 +1,13 @@
+name: stateless-portable-atomic
+
+on: push
+
+jobs:
+  stateless-portable-atomic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rust-src
+      - run: cargo +nightly build --release --target riscv64im-unknown-none-elf --no-default-features -Z build-std=core,alloc --manifest-path examples/stateless-portable-atomic/Cargo.toml
